@@ -1,0 +1,249 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 设置整个聊天应用的容器样式 */
+.container {
+    display: flex;
+    width:100%;
+    height:100%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 设置侧边栏样式 */
+.sidebar {
+    width: 250px;
+    background: #f4f4f4;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+/* 设置历史对话部分的样式 */
+.history-section {
+    margin-bottom: 10px;
+}
+
+.history-section h3 {
+    margin: 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.conversation-list {
+    font-size: 0.9em;
+    color: #888;
+    height: 100px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+#today-conversations,
+#seven-days-conversations,
+#thirty-days-conversations {
+    height: 100px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+/* 设置侧边栏按钮样式 */
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.sidebar button.logout {
+    background: #f44336; /* 红色背景 */
+    color: #fff;
+}
+
+.sidebar button.logout:hover {
+    background: #d32f2f; /* 深红色背景 */
+}
+
+/* 设置聊天容器样式 */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-header {
+    background: #4caf50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em; /* 增加字体大小 */
+    font-weight: bold; /* 增加字体粗细 */
+}
+
+/* 设置聊天内容区域样式 */
+.chat-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 设置每条聊天消息的样式 */
+.chat-message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.chat-message.user {
+    align-items: flex-end;
+}
+
+.chat-message .message-sender {
+    display: flex;
+    align-items: center;
+}
+
+.chat-message .message-sender img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-message.user .message-sender img {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+/* 设置聊天消息内容样式 */
+.chat-message .message-content {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #f1f1f1;
+    position: relative;
+    margin-top: 5px;
+    max-width: 90%; /* 限制消息内容的最大宽度 */
+    word-wrap: break-word; /* 处理长单词的换行 */
+}
+
+.chat-message.user .message-content {
+    background: #4caf50;
+    color: #fff;
+}
+
+/* 设置消息时间戳样式 */
+.chat-message .message-timestamp {
+    font-size: 0.8em;
+    color: #888;
+    position: absolute;
+    bottom: -15px; /* 往下移动时间戳 */
+}
+
+.chat-message.user .message-timestamp {
+    right: 10px;
+}
+
+.chat-message.chatgpt .message-timestamp {
+    left: 10px;
+}
+
+/* 设置聊天输入框和按钮样式 */
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    background: #eee;
+    align-items: center;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.chat-footer button {
+    padding: 10px 20px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.footer-note {
+    text-align: center;
+    color: #888;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* 设置消息操作按钮样式 */
+.message-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.message-actions button {
+    background: none;
+    border: none;
+    color: #4caf50;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* 设置重新生成按钮样式 */
+.chat-footer #regenerate-button {
+    background: #ff9800;
+    margin-left: 10px;
+}
+
+.message-actions i {
+    font-size: 20px; /* 设置图标的大小 */
+    cursor: pointer; /* 鼠标悬停时显示手形光标 */
+    margin-left: 5px; /* 设置图标之间的间距 */
+}
+
+.chat-footer textarea.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    resize: vertical; /* 允许垂直调整大小 */
+    min-height: 50px; /* 设置最小高度 */
+    max-height: 200px; /* 设置最大高度 */
+    overflow-y: auto; /* 超出高度时显示滚动条 */
+    word-wrap: break-word; /* 处理长单词的换行 */
+}

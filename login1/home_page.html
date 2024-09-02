@@ -1,0 +1,307 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Login & Registration Form</title>  
+    <link rel="stylesheet" href="/resource/iconfont/iconfont.css"> <!--big_work\huatuo\login\resource\iconfont\iconfont.css-->
+    <style>
+ body {  
+    font-family: '楷体';  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    background-color: #f4f4f4;  
+    /*background: url("/resource/images/背景1.png") no-repeat center center fixed;
+                   -webkit-background-size: cover;
+                    -o-background-size: cover;                
+                    background-size: 100% 100%;*/
+    background: url("/resource/images/背景2.png") no-repeat center center fixed;
+                   -webkit-background-size: cover;
+                    -o-background-size: cover;                
+                    background-size: 100% 100%;
+}  
+  
+.container {  
+    background-color:rgb(227, 227, 223);  
+    padding: 20px;  
+    border-radius: 8px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    width: 300px;  
+    text-align: center;  
+    margin-left: 200px;
+    margin-top: 100px;
+    font-family: '楷体';
+    font-size: 20px;
+    font-weight: 900;
+}  
+  
+.form-group {  
+    margin-bottom: 15px;  
+    position: relative;  
+    /*display: inline-block;*/
+}  
+  
+.form-group label {  
+    display: block;  
+    margin-bottom: 5px;  
+}  
+  
+.form-group input {  
+    width: 100%;  
+    padding: 8px;  
+    box-sizing: border-box;  
+    padding-left: 30px; 
+    color:black;
+} 
+/*.form-group input[type="text"] {  
+    padding-left: 30px; 
+    color:black;
+}  */ 
+.form-group .iconfont {  
+    position: absolute;  
+    left: 10px; /* 或根据需要调整 */  
+    top: 40%;  
+    transform: translateY(-50%); /* 垂直居中图标 */  
+    pointer-events: none; /* 防止点击图标时影响input的焦点 */  
+}  
+button {  
+    width: 100%;  
+    padding: 10px;  
+    background-color: #b2c9b2;  
+    color: black;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+  
+button:hover {  
+    background-color: #0056b3;  
+}
+.form-hidden {  
+    display: none;  
+}  
+  
+.form-visible {  
+    display: block;  
+}
+.button-group {  
+    display: flex;  
+    justify-content: space-between;  
+    margin-bottom: 20px;  
+    /*background:white;*/
+    color:black
+}  
+  
+.button-group button {  
+    padding: 10px 20px;  
+    cursor: pointer;  
+   /* border-radius: 10px;*/
+    border: 2px solid #ccc;
+}  
+  
+.active-btn {  
+    /*background-color: transparent;/*#407ffd; /* 假设的蓝色背景 */  
+    color: white;  
+    position: relative;
+    padding-right: 30px;
+}  
+.active-btn .underline {  
+    display: none; /* 默认隐藏横线 */  
+    position: absolute;  
+    bottom: -2px; /* 根据需要调整位置 */  
+    left: 0;  
+    width: 100%;  
+    height: 2px; /* 横线的高度 */  
+    background-color:rgb(147, 147, 126); /* 横线的颜色 */  
+    /* ... 其他样式（如圆角等），根据需要添加 ... */  
+}  
+.form-wrapper {  
+    /* 其他需要的样式 */  
+}  
+  
+.form-hidden {  
+    display: none;  
+}
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <h1>华佗再世</h1>
+        <br>
+        <div class="button-group">
+            <button id="loginBtn" class="active-btn" style="background:white;color:black;">登录<span class="underline"></span></button>  
+            <button id="registerBtn" class="active-btn" style="background:white;color:black">注册<span class="underline"></span></button>  
+        </div>
+        <br>
+        <div id="loginFormWrapper" class="form-wrapper"> 
+        <!--<h2>登录</h2>  -->
+        <form id="loginForm">  
+            <div class="form-group">  
+                <!--<label for="loginUsername">用户名</label>  -->
+                <input type="text" placeholder="账号" id="loginUsername" name="username" required>  
+                <span class="iconfont icon-yonghu"></span>
+            </div>  
+            <br>
+            <div class="form-group">  
+                
+                <input type="password" placeholder="密码" id="loginPassword" name="password" required>  
+                <span class="iconfont icon-mima"></span>
+            </div>  
+            <br>
+            <button type="submit">确定</button>  
+        </form>  
+        
+        </div>
+        <div id="registerFormWrapper" class="form-wrapper form-hidden">
+        <!--<h2>注册</h2> --> 
+        <form id="registerForm">  
+            <div class="form-group" >  
+                
+                <input type="text" placeholder="手机号/邮箱/微信号" id="registerUsername" name="username" required>  
+                <span class="iconfont icon-yonghu"></span>
+            </div>  
+            <br>
+            <div class="form-group" >  
+                
+                <input type="text" placeholder="用户名" id="registerUsername1" name="username1" required>  
+                <span class="iconfont icon-yonghu"></span>
+            </div>  
+            <br>
+            <div class="form-group">  
+               
+                <input type="password" placeholder="新密码" id="registerPassword" name="password" required>  
+                <span class="iconfont icon-mima"></span>
+            </div>  
+            <br>
+            <div class="form-group">  
+             
+                <input type="password" placeholder="确认新密码" id="confirmPassword" name="confirmPassword" required> 
+                <span class="iconfont icon-querenmima" style="top: 45%"></span> 
+            </div>  
+            <br>
+            <button type="submit">确定</button>  
+        </form>  
+        </div>  
+    </div>  
+  
+</body>  
+</html>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {  
+    var loginBtn = document.getElementById('loginBtn');  
+    var registerBtn = document.getElementById('registerBtn');  
+    var loginFormWrapper = document.getElementById('loginFormWrapper');  
+    var registerFormWrapper = document.getElementById('registerFormWrapper');  
+  
+    // 初始状态设置  
+    loginFormWrapper.classList.remove('form-hidden');  
+    registerFormWrapper.classList.add('form-hidden');  
+    loginBtn.querySelector('.underline').style.display = 'block'; 
+  
+    // 按钮点击事件处理  
+    function toggleForms(showLogin) {  
+        if (showLogin) {  
+            loginFormWrapper.classList.remove('form-hidden');  
+            registerFormWrapper.classList.add('form-hidden');  
+            loginBtn.classList.add('active-btn');  
+            registerBtn.classList.remove('active-btn');  
+        } else {  
+            loginFormWrapper.classList.add('form-hidden');  
+            registerFormWrapper.classList.remove('form-hidden');  
+            loginBtn.classList.remove('active-btn');  
+            registerBtn.classList.add('active-btn');  
+        }  
+    }  
+    function toggleFormsAndUnderlines(showLogin) {  
+        if (showLogin) {  
+            loginFormWrapper.classList.remove('form-hidden');  
+            registerFormWrapper.classList.add('form-hidden');  
+            loginBtn.querySelector('.underline').style.display = 'block'; // 显示登录横线  
+            registerBtn.querySelector('.underline').style.display = 'none'; // 隐藏注册横线  
+        } else {  
+            loginFormWrapper.classList.add('form-hidden');  
+            registerFormWrapper.classList.remove('form-hidden');  
+            loginBtn.querySelector('.underline').style.display = 'none'; // 隐藏登录横线  
+            registerBtn.querySelector('.underline').style.display = 'block'; // 显示注册横线  
+        }  
+    }  
+    loginBtn.addEventListener('click', function() {  
+        toggleForms(true);  
+        toggleFormsAndUnderlines(true);  
+    });  
+  
+    registerBtn.addEventListener('click', function() {  
+        toggleForms(false);  
+        toggleFormsAndUnderlines(false);  
+    });  
+});
+</script>
+<script>  
+    document.getElementById('loginForm').addEventListener('submit', function(e) {  
+        e.preventDefault();  
+        const username = document.getElementById('loginUsername').value;  
+        const password = document.getElementById('loginPassword').value;  
+        //alert(username);
+        fetch('/login', {  
+            method: 'POST',  
+            headers: {  
+                'Content-Type': 'application/json',  
+            },  
+            body: JSON.stringify({ username, password }),  
+        })  
+        .then(response => response.json())  
+        .then(data => {  
+            if (data.success) {  
+                // 跳转到新页面  
+                //localStorage.setItem('username', username); 
+             window.location.href = 'http://localhost:8000/pages/index.html?username='+ encodeURIComponent(username);
+               // window.location.href = 'index.html?username=' + encodeURIComponent(username);
+                //window.location.href = 'new.html?username=' + encodeURIComponent(username); 
+            } else {  
+                alert(data.message);  
+            }  
+        })  
+        .catch((error) => {  
+            console.error('Error:', error);  
+        });  
+    });  
+
+document.getElementById('registerForm').addEventListener('submit', function(e) {  
+    e.preventDefault();  
+    const username = document.getElementById('registerUsername').value;  
+    const password = document.getElementById('registerPassword').value;  
+    const confirmPassword = document.getElementById('confirmPassword').value; 
+    const username1 = document.getElementById('registerUsername1').value; 
+  
+    if (password !== confirmPassword) {  
+        alert('两次输入的密码不一致，请重新输入！');  
+        return;  
+    }  
+  
+    fetch('/register', {  
+        method: 'POST',  
+        headers: {  
+            'Content-Type': 'application/json',  
+        },  
+        body: JSON.stringify({ username, password, confirmPassword,username1 }),  
+    })  
+   // alert(data.success)
+    .then(response => response.json())  
+    .then(data => {  
+        if (data.success) {  
+            // 如果注册成功，刷新页面或重定向到另一个页面  
+            alert('注册成功！请重新登录');
+            window.location.reload(); // 或者 window.location.href = '/login';  
+        } else {  
+            alert(data.message);  
+        }  
+    })  
+    .catch((error) => {  
+        console.error('Error:', error);  
+        alert('注册失败，请稍后再试！');  
+    });  
+});  
+    </script>

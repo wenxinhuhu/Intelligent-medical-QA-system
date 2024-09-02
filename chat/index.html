@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华佗再世大模型</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./iconfont.css">
+</head>
+<body onload="initializeChat()">
+    <div class="container">
+        <div class="sidebar">
+            <h2>历史对话</h2>
+            <!-- 今日对话区域 -->
+            <div class="history-section">
+                <h3>今日</h3>
+                <div id="today-conversations" class="conversation-list"></div>
+            </div>
+            <!-- 七日内对话区域 -->
+            <div class="history-section">
+                <h3>七日内</h3>
+                <div id="seven-days-conversations" class="conversation-list"></div>
+            </div>
+            <!-- 30天内对话区域 -->
+            <div class="history-section">
+                <h3>30天内</h3>
+                <div id="thirty-days-conversations" class="conversation-list"></div>
+            </div>
+            <!-- 操作按钮 -->
+            <button onclick="startNewConversation()">开启新对话</button>
+             <br>
+            <button onclick="clearAllConversations()">清除所有对话</button>
+             <br>
+            <button class="logout" onclick="logout()">退出</button>
+        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                华佗再世
+            </div>
+            <div class="chat-body" id="chat-body">
+                <!-- 聊天消息将在这里添加 -->
+            </div>
+            <div class="chat-footer">
+
+                <textarea id="chat-input" class="chat-input" placeholder="请输入消息..." style="overflow-y: auto;"></textarea>
+                <button id="input-send">发送</button>
+                <button id="regenerate-button" onclick="regenerateMessage()">重新生成</button>
+            </div>
+            <div class="footer-note">华佗也不是万能的，具体病情以医生为准</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
